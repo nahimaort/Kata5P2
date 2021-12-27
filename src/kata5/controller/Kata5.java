@@ -1,4 +1,4 @@
-package kata5.main;
+package kata5.controller;
 
 import java.util.List;
 import kata5.model.Histogram;
@@ -6,11 +6,12 @@ import kata5.model.Mail;
 import kata5.view.HistogramDisplay;
 import kata5.view.MailHistogramBuilder;
 import kata5.view.MailListReader;
+import kata5.view.MailListReaderBD;
 
 public class Kata5 {
     public static List<Mail> input() {
-        String nameFile = "email.txt";
-        List<Mail> mailList = MailListReader.read(nameFile);
+        MailListReaderBD listReader = new MailListReaderBD();
+        List<Mail> mailList = listReader.read();
         return mailList;
     }
     
